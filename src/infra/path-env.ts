@@ -100,6 +100,7 @@ function candidateBinDirs(opts: EnsureOpenClawPathOpts): { prepend: string[]; ap
   prepend.push(path.join(homeDir, ".local", "share", "pnpm"));
   prepend.push(path.join(homeDir, ".bun", "bin"));
   prepend.push(path.join(homeDir, ".yarn", "bin"));
+  prepend.push(path.join(homeDir, "homebrew", "bin")); // Local homebrew setup overrules global setup
   prepend.push("/opt/homebrew/bin", "/usr/local/bin", "/usr/bin", "/bin");
 
   return { prepend: prepend.filter(isDirectory), append: append.filter(isDirectory) };
